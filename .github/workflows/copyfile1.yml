@@ -11,8 +11,8 @@ jobs:
      # - name: test job
       #  run: uptime
 
-    #  - name: Checkout the file
-     #   uses: actions/checkout@v3
+      - name: Checkout the file
+        uses: actions/checkout@v3
 
       #- name: Copy the test.txt file to server
        # run: cp test.txt /tmp
