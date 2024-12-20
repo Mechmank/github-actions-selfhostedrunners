@@ -8,8 +8,8 @@ jobs:
       run:
         working-directory: new
     steps:
-      - name: test job
-        run: uptime
+     # - name: test job
+      #  run: uptime
 
       - name: Checkout the file
         uses: actions/checkout@v4
