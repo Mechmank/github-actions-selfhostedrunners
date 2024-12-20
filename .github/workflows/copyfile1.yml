@@ -24,10 +24,10 @@ jobs:
 
       - name: Copy and configure the website
         run: |
-          rm -rf /var/www/html/*
-          cp *.zip /var/www/html/
-          unzip /var/www/html/*.zip 
-          mv /var/www/html/*/* /var/www/html/
+          sudo rm -rf /var/www/html/*
+          sudo cp *.zip /var/www/html/
+          sudo unzip /var/www/html/*.zip 
+          sudo mv /var/www/html/*/* /var/www/html/
 
       - name: Restarting nginx Service
         run: | 
