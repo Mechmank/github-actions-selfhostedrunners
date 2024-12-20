@@ -26,7 +26,7 @@ jobs:
         run: |
           sudo rm -rf /var/www/html/*
           sudo cp *.zip /var/www/html/
-          sudo unzip /var/www/html/*.zip 
+          sudo unzip /var/www/html/*.zip -d /var/www/html/f2
           sudo mv /var/www/html/*/* /var/www/html/
 
       - name: Restarting nginx Service
