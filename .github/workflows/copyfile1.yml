@@ -1,1 +1,18 @@
 #copy the file to the self runner server
+name: Using self hosted runner with actions
+on: workflow_dispatch
+jobs:
+  copy-file:
+    runs-on: self-hsted
+    defaults:
+      run:
+        working-directory: new
+    steps:
+      - name: test job
+        run: uptime
+
+      - name: Checkout the file
+        uses: actions/checkout@v4
+
+      - name: Copy the test.txt file to server
+        run: cp text.txt /tmp
