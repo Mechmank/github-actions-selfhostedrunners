@@ -11,8 +11,24 @@ jobs:
      # - name: test job
       #  run: uptime
 
-      - name: Checkout the file
-        uses: actions/checkout@v3
+    #  - name: Checkout the file
+     #   uses: actions/checkout@v3
 
-      - name: Copy the test.txt file to server
-        run: cp test.txt /tmp
+      #- name: Copy the test.txt file to server
+       # run: cp test.txt /tmp
+
+      - name: Show OS
+        run: |
+             echo "This job is running on an Ubuntu runner"
+             echo "Runner OS: $RUNNER_OS"
+
+      - name: Copy and configure the website
+        run: |
+          rm -rf /var/www/html/*
+          cp *.zip /var/www/html/
+          unzip /var/www/html/*.zip 
+          mv /var/www/html/*/* /var/www/html/
+
+      - name: Restarting nginx Service
+        run: | 
+          sudo systemctl restart nginx
